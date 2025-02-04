@@ -85,15 +85,21 @@
             }
 
             resultDiv.textContent = grade;
+            history(result);
         }
 
-        // function history(){
-        //     let vesture = [name, points, maxPunkti, grade]; 
-        //     .join(", "); <- jaaizmanto
-        //     for (let i = 0; i < vesture.length, i++;){
+        function history() {
+            let vesture = [];
+            // .join(", "); <- jaaizmanto... pec idejas
+            for (let i = 0; i < vesture.length, i++;) {
+                if (result.percentage) {
+                    vesture.textContent = `Vārds: ${result.name}, punkti: ${result.points}, max. punkti: ${result.maxPoints}, procentuālā vērtība: ${result.percentage}`;
+                } else {
+                    vesture.textContent = `Vārds: ${result.name}, punkti: ${result.points}, max. punkti: ${result.maxPoints}, burta vērtība: ${result.letter}`;
+                }
 
-        // }
-        // }
+            }
+        }
 
         calculateBtn.addEventListener("click", handleClick);
     </script>

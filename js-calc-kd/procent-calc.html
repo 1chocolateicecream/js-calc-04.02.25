@@ -35,7 +35,9 @@
         <option value="letter">Burtu vērtējums (A, B, C utt.)</option>
     </select><br /><br />
 
-    <button>Aprēķināt vērtējumu</button>
+    <button id="calculate-btn">Aprēķināt vērtējumu</button>
+
+    <p id="result"></p>
 
     <script>
         const calculateBtn = document.getElementById("calculate-btn");
@@ -51,13 +53,12 @@
             const maxPoints = parseFloat(maxPointsInput);
             const gradingScheme = gradingSchemeSelect.value;
 
-            // Validate inputs
             if (!name || isNaN(points) || isNaN(maxPoints) || maxPoints <= 0) {
-                resultDiv.innerHTML = "Lūdzu, aizpildiet visus laukus pareizi.";
+                resultDiv.textContent = "Lūdzu, aizpildiet visus laukus pareizi.";
                 return;
             }
             if (points < 0 || points > maxPoints) {
-                resultDiv.innerHTML =
+                resultDiv.textContent =
                     "Iegūtie punkti nedrīkst pārsniegt maksimālos punktus.";
                 return;
             }
@@ -80,7 +81,7 @@
                 }
             }
 
-            resultDiv.innerHTML = grade;
+            resultDiv.textContent = grade;
         }
 
         calculateBtn.addEventListener("click", handleClick());

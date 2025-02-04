@@ -63,21 +63,21 @@
                 return;
             }
 
-            const grade = "";
+            let grade = "";
             if (gradingScheme === "percentage") {
                 const percentage = (points / maxPoints) * 100;
-                grade = `Jūsu procentuālā vērtība ir: ${percentage.toFixed(2)}%`;
+                grade = `${name}, Jūsu procentuālā vērtība ir: ${percentage.toFixed(2)}%`;
             } else if (gradingScheme === "letter") {
                 if (points >= 90) {
-                    grade = "Jūsu burtu vērtējums ir: A";
+                    grade = `${name}, Jūsu burtu vērtējums ir: A`;
                 } else if (points >= 80) {
-                    grade = "Jūsu burtu vērtējums ir: B";
+                    grade = `${name}, Jūsu burtu vērtējums ir: B`;
                 } else if (points >= 70) {
-                    grade = "Jūsu burtu vērtējums ir: C";
+                    grade = `${name}, Jūsu burtu vērtējums ir: C`;
                 } else if (points >= 60) {
-                    grade = "Jūsu burtu vērtējums ir: D";
+                    grade = `${name}, Jūsu burtu vērtējums ir: D`;
                 } else {
-                    grade = "Jūsu burtu vērtējums ir: F";
+                    grade = `${name}, Jūsu burtu vērtējums ir: F`;
                 }
             }
 

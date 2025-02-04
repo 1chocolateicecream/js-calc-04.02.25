@@ -56,13 +56,16 @@
             if (!name || isNaN(points) || isNaN(maxPoints) || maxPoints <= 0) {
                 resultDiv.textContent = "Lūdzu, aizpildiet visus laukus pareizi.";
                 return;
-            }
-            if (points < 0 || points > maxPoints) {
+            } else if (points < 0 || points > maxPoints) {
                 resultDiv.textContent =
                     "Iegūtie punkti nedrīkst pārsniegt maksimālos punktus.";
                 return;
+            } else {
+                let calculate(name, points, maxPoints, gradingScheme);
             }
+        }
 
+        function calculate(name, points, maxPoints, gradingScheme) {
             let grade = "";
             if (gradingScheme === "percentage") {
                 const percentage = (points / maxPoints) * 100;
